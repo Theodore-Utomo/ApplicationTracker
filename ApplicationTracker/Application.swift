@@ -12,15 +12,16 @@ import SwiftData
 @MainActor
 class Application {
     var item: String = ""
-    var dateApplied: Date = Date.now
+    var lastHeard: Date = Date.now
     var status = "Applied"
-    var notes: String = ""
+    var nextSteps: String = ""
     
-    init(item: String = "", dateApplied: Date = Date.now, status: String = "Applied", notes: String = "") {
+    
+    init(item: String = "", lastHeard: Date = Date.now, status: String = "Applied", nextSteps: String = "") {
         self.item = item
-        self.dateApplied = dateApplied
+        self.lastHeard = lastHeard
         self.status = status
-        self.notes = notes
+        self.nextSteps = nextSteps
     }
     
 }
@@ -29,9 +30,9 @@ extension Application {
     static var preview: ModelContainer {
         let container = try! ModelContainer(for: Application.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         
-        container.mainContext.insert(Application(item: "Apple", dateApplied: .now, status: "Applied", notes: "This is a test application"))
-        container.mainContext.insert(Application(item: "Google", dateApplied: .now, status: "Applied", notes: "This is a test application"))
-        container.mainContext.insert(Application(item: "Meta", dateApplied: .now, status: "Applied", notes: "This is a test application"))
+        container.mainContext.insert(Application(item: "Apple", lastHeard: .now, status: "Offer", nextSteps: "This is a test application"))
+        container.mainContext.insert(Application(item: "Google", lastHeard: .now, status: "Interviewing", nextSteps: "This is a test application"))
+        container.mainContext.insert(Application(item: "Meta", lastHeard: .now, status: "Applying", nextSteps: "This is a test application"))
         return container
     }
 }

@@ -12,17 +12,27 @@ struct SortedApplicationList: View {
     @Environment(\.modelContext) var modelContext
     
     @Query var applications: [Application]
+    
     var body: some View {
         List {
             ForEach(applications) { application in
                 NavigationLink {
                     DetailView(application: application)
                 } label: {
-                    Text(application.item)
+                    VStack(alignment: .leading){
+                        Text(application.item)
+                        
+                        Text("\(application.status) - \(application.nextSteps)")
+                            .font(.caption)
+                        
+                        Text("Last heard - \(application.lastHeard.formatted(.dateTime.year().month().day()))")
+                            .font(.caption)
+                    }
                 }
             }
         }
         .listStyle(.plain)
+        
     }
 }
 
@@ -30,5 +40,6 @@ struct SortedApplicationList: View {
 #Preview {
     NavigationStack {
         SortedApplicationList()
+            .modelContainer(Application.preview)
     }
 }
