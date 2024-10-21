@@ -6,13 +6,29 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SortedApplicationList: View {
+    @Environment(\.modelContext) var modelContext
+    
+    @Query var applications: [Application]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(applications) { application in
+                NavigationLink {
+                    DetailView(application: application)
+                } label: {
+                    Text(application.item)
+                }
+            }
+        }
+        .listStyle(.plain)
     }
 }
 
+
 #Preview {
-    SortedApplicationList()
+    NavigationStack {
+        SortedApplicationList()
+    }
 }

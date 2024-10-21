@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ApplicationTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ApplicationView()
+                .modelContainer(for: Application.self)
         }
+    }
+    init() {
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }

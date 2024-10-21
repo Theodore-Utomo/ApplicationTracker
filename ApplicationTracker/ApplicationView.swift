@@ -6,19 +6,36 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 struct ApplicationView: View {
+    @State private var sheetIsPresented = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            SortedApplicationList()
+                .navigationTitle("Applications")
+                .navigationBarTitleDisplayMode(.automatic)
+                .sheet(isPresented: $sheetIsPresented) {
+                    DetailView(application: Application())
+                }
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            sheetIsPresented.toggle()
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                    }
+                }
         }
-        .padding()
     }
 }
 
 #Preview {
-    ApplicationView()
+    NavigationStack {
+        ApplicationView()
+            .modelContainer(Application.preview)
+    }
 }
