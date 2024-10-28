@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		0472D9CC2CC5935A0039C859 /* SortedApplicationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472D9CB2CC5935A0039C859 /* SortedApplicationList.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		04A485482CC583C100BEF18C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -28,7 +24,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0472D9CB2CC5935A0039C859 /* SortedApplicationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedApplicationList.swift; sourceTree = "<group>"; };
 		04A485372CC583BF00BEF18C /* ApplicationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplicationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A485472CC583C100BEF18C /* ApplicationTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A485512CC583C100BEF18C /* ApplicationTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplicationTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +75,6 @@
 		04A4852E2CC583BF00BEF18C = {
 			isa = PBXGroup;
 			children = (
-				0472D9CB2CC5935A0039C859 /* SortedApplicationList.swift */,
 				04A485392CC583BF00BEF18C /* ApplicationTracker */,
 				04A4854A2CC583C100BEF18C /* ApplicationTrackerTests */,
 				04A485542CC583C100BEF18C /* ApplicationTrackerUITests */,
@@ -242,7 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0472D9CC2CC5935A0039C859 /* SortedApplicationList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
